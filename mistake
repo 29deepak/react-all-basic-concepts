@@ -1,0 +1,62 @@
+import React, { useState,useEffect, useRef } from 'react';
+
+const MyComponent = () => {
+    
+    const Reffer=useRef();
+    const [myData,setData] =useState()
+    const [counter, setCounter] =useState(0)
+
+
+    const handlers=(e)=>{
+        const {name,value} =e.target
+        setData(value)
+        
+    }
+    const handlerFunction=()=>{
+        Reffer.current.value="i am agood boy"
+    }
+
+  return (
+    <>
+    <input type="text" name="abc" ref={Reffer} />
+    <p>the paragraph of the data : {myData}</p>
+    <button onClick={handlerFunction}>Increment :{counter}</button>
+    </>
+
+  )
+};
+
+export default MyComponent;
+
+
+
+
+// import React, { useState,useEffect, useRef } from 'react';
+
+// const MyComponent = () => {
+    
+    
+//     const [myData,setData] =useState()
+//     const [counter, setCounter] =useState(0)
+
+
+//     const handlers=(e)=>{
+//         const {name,value} =e.target
+//         setData(value)
+        
+//     }
+//     const handlerFunction=()=>{
+//         setCounter(counter + 1)
+//     }
+
+//   return (
+//     <>
+//     <input type="text" name="abc" onChange={handlers} />
+//     <p>the paragraph of the data : {myData}</p>
+//     <button onClick={handlerFunction}>Increment :{counter}</button>
+//     </>
+
+//   )
+// };
+
+// export default MyComponent;
